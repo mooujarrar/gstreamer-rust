@@ -4,5 +4,8 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+glib = "0.21.5"
 gstreamer = "0.24.4"
+gstreamer-rtsp = "0.24.4"
+gstreamer-webrtc = "0.24.4"
 rocket = "0.5.1"
