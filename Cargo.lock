@@ -455,6 +455,57 @@ dependencies = [
 ]
 
 [[package]]
+name = "gstreamer-rtsp"
+version = "0.24.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8a8ba1cfda50a41437360ffaa9250e23b82808ad71045b7e2fc1c02f22e4f9c4"
+dependencies = [
+ "glib",
+ "gstreamer",
+ "gstreamer-rtsp-sys",
+ "gstreamer-sdp",
+ "libc",
+]
+
+[[package]]
+name = "gstreamer-rtsp-sys"
+version = "0.24.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "963baf834f35c3bdc5116f3e1cbd24afc01e3e3d77e9bbeb14e377b1b1fea293"
+dependencies = [
+ "gio-sys",
+ "glib-sys",
+ "gobject-sys",
+ "gstreamer-sdp-sys",
+ "gstreamer-sys",
+ "libc",
+ "system-deps",
+]
+
+[[package]]
+name = "gstreamer-sdp"
+version = "0.24.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f6bd9534fe9e59fdc3eaae7ae5fe94c2a80d42339496ee96b5c281e83a72695a"
+dependencies = [
+ "glib",
+ "gstreamer",
+ "gstreamer-sdp-sys",
+]
+
+[[package]]
+name = "gstreamer-sdp-sys"
+version = "0.24.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ee2bf58223598ba2e9098b060959df516f7ff015a66e6fa18773d66e27a00dec"
+dependencies = [
+ "glib-sys",
+ "gstreamer-sys",
+ "libc",
+ "system-deps",
+]
+
+[[package]]
 name = "gstreamer-sys"
 version = "0.24.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -463,6 +514,32 @@ dependencies = [
  "cfg-if",
  "glib-sys",
  "gobject-sys",
+ "libc",
+ "system-deps",
+]
+
+[[package]]
+name = "gstreamer-webrtc"
+version = "0.24.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "dc104c3d81d3c43af9e13d75948a151450de72713bbf0cdee2dfd83de76a44bf"
+dependencies = [
+ "glib",
+ "gstreamer",
+ "gstreamer-sdp",
+ "gstreamer-webrtc-sys",
+ "libc",
+]
+
+[[package]]
+name = "gstreamer-webrtc-sys"
+version = "0.24.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e32ba28a2aeed771fc85c53276abc0506b6a61a803f5d6bd12292cd3e41f17a3"
+dependencies = [
+ "glib-sys",
+ "gstreamer-sdp-sys",
+ "gstreamer-sys",
  "libc",
  "system-deps",
 ]
@@ -1275,7 +1352,10 @@ checksum = "a2eb9349b6444b326872e140eb1cf5e7c522154d69e7a0ffb0fb81c06b37543f"
 name = "streaming_app"
 version = "0.1.0"
 dependencies = [
+ "glib",
  "gstreamer",
+ "gstreamer-rtsp",
+ "gstreamer-webrtc",
  "rocket",
 ]
 
